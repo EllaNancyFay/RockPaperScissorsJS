@@ -1,28 +1,23 @@
-		turn = []
-			
-			document.getElementsByTagName('img')[0].onclick = function() { turn.push(new Rock)}
-			document.getElementsByTagName('img')[1].onclick = function() { turn.push(new Paper)}
-			document.getElementsByTagName('img')[2].onclick = function() { turn.push(new Scissors)}
 
-			function displayWinner() {
-				var x = document.createElement("P");
-				var t = document.createTextNode(rules.versus(turn[0], turn[1]));
-   				 x.appendChild(t);
-   				 document.getElementById("myDiv").appendChild(x);
-			}
 
-			document.getElementsByTagName('img')[0].addEventListener("click", function() {
-				if (turn.length === 2) {
-				displayWinner()
-				turn = [] }
-			})  
-			document.getElementsByTagName('img')[1].addEventListener("click", function() {
-				if (turn.length === 2) {
-				displayWinner()
-				turn = [] }
-			})
-			document.getElementsByTagName('img')[2].addEventListener("click", function() {
-				if (turn.length === 2) {
-				displayWinner()
-				turn = [] }
-			})
+$(document).ready (function() {
+
+var rps = new RPS;
+var rock = new Rock;
+var paper = new Paper;
+var scissors = new Scissors;
+
+
+$('.choice').on('click', function() {
+	var playerChoice = new PlayerChoice($(this).data('pick'));
+	var computerChoice = rps.randomChoice(); 
+	rps.versus(playerChoice, computerChoice);
+
+	$('#playerChoice').text('You: ' + (playerChoice.type));
+	$('#computerChoice').text('Computer: ' + (computerChoice.type));
+	$('#outcome').text('The outcome is: ' + rps.versus(playerChoice, computerChoice).type);
+	
+});
+
+});
+

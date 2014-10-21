@@ -12,26 +12,37 @@ function Scissors() {
  	this.type = 'scissors';
  };
 
- function Draw() {};
+ function Draw() {
+ 	this.type = 'draw';
+ };
 
- rules = new RPS;
+function PlayerChoice(my_type){
+	this.type = my_type
+};
 
 RPS.prototype.versus = function(choiceOne, choiceTwo) {
  if(choiceOne.type === choiceTwo.type){
- 	return ("It's a draw")
+ 	return (new Draw)
  }
 	if((choiceOne.type === ('rock') && choiceTwo.type === ('scissors')) ||
 	  (choiceOne.type === ('scissors') && choiceTwo.type === ('rock'))) 
-	return ('Rock wins');
+	return (new Rock);
 
 	if((choiceOne.type === ('paper') && choiceTwo.type === ('scissors')) ||
 		(choiceOne.type === ('scissors') && choiceTwo.type === ('paper')))
-	return ('Scissors wins');
+	return (new Paper);
 
 	if((choiceOne.type === ('paper') && choiceTwo.type === ('rock')) ||
 		(choiceOne.type === ('rock') && choiceTwo.type === ('paper')))
-	return ('Paper wins');
+	return (new Scissors);
 };
+
+
+RPS.prototype.randomChoice = function() {
+	var choice = [new Rock, new Paper, new Scissors]
+	return choice[Math.floor(Math.random() * 3)]
+};
+
 
 
 
