@@ -1,46 +1,46 @@
 function RPS() {};
 
 function Rock() {
-	this.type = 'rock';
+  this.type = 'rock';
 };
 
 function Paper() {
-	this.type = 'paper';
+  this.type = 'paper';
 };
 
 function Scissors() {
- 	this.type = 'scissors';
+  this.type = 'scissors';
  };
 
  function Draw() {
- 	this.type = 'draw';
+  this.type = 'draw';
  };
 
 function PlayerChoice(my_type){
-	this.type = my_type
+  this.type = my_type
 };
 
 RPS.prototype.versus = function(choiceOne, choiceTwo) {
  if(choiceOne.type === choiceTwo.type){
- 	return (new Draw)
+  return (new Draw)
  }
-	if((choiceOne.type === ('rock') && choiceTwo.type === ('scissors')) ||
-	  (choiceOne.type === ('scissors') && choiceTwo.type === ('rock'))) 
-	return (new Rock);
+  if((choiceOne.type === ('rock') && choiceTwo.type === ('scissors')) ||
+    (choiceOne.type === ('scissors') && choiceTwo.type === ('rock'))) 
+  return 'rock';
 
-	if((choiceOne.type === ('paper') && choiceTwo.type === ('scissors')) ||
-		(choiceOne.type === ('scissors') && choiceTwo.type === ('paper')))
-	return (new Paper);
+  if((choiceOne.type === ('paper') && choiceTwo.type === ('scissors')) ||
+    (choiceOne.type === ('scissors') && choiceTwo.type === ('paper')))
+  return 'scissors';
 
-	if((choiceOne.type === ('paper') && choiceTwo.type === ('rock')) ||
-		(choiceOne.type === ('rock') && choiceTwo.type === ('paper')))
-	return (new Scissors);
+  if((choiceOne.type === ('paper') && choiceTwo.type === ('rock')) ||
+    (choiceOne.type === ('rock') && choiceTwo.type === ('paper')))
+  return 'paper';
 };
 
 
 RPS.prototype.randomChoice = function() {
-	var choice = [new Rock, new Paper, new Scissors]
-	return choice[Math.floor(Math.random() * 3)]
+  var choice = [new Rock, new Paper, new Scissors]
+  return choice[Math.floor(Math.random() * 3)]
 };
 
 

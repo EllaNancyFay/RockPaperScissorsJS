@@ -1,35 +1,24 @@
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
-		<title>Rock/Paper/Scissors</title>
-	</head>
-
-	<body>
-		<h1>Rock/Paper/Scissors</h1>
-		<h2>The rules of the game</h2>
-		<p>
-			Rock beats scissors<br>
-			Scissors beats paper<br>
-			Paper beats rock
-		</p>
-		
-			<img class="choice" id="rock" src="public/images/rock.jpg" alt="rock" title="rock" data-pick="rock"/>
-			<img class="choice" id="paper" src="public/images/paper.jpg" height="280px" width="220px" alt="paper" title="paper" data-pick="paper"/>
-			<img class="choice" id="scissors" src="public/images/scissor.jpg" alt="scissors" title="scissors" data-pick="scissors"/>
-
-
-
-
-		<div id="myDiv">
-			<p id='outcome'> </p>
-			<p id='playerChoice'> </p>
-			<p id='computerChoice'> </p>
-		</div>
-
-		<script src="jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="src/frontEnd.js" ></script>
-		<script type="text/javascript" src="src/Rps.js" ></script>
-
-
-	</body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
+    <title>Rock/Paper/Scissors</title>
+  </head>
+  <body>
+    <h1>Rock/Paper/Scissors</h1>
+    <h2>The rules of the game</h2>
+    <p>Rock > Scissors | Scissors > Paper | Paper > Rock</p>
+      <div class="circle">
+        <img class="choice" id="rock" src="public/images/rock.png" alt="rock" title="rock" data-pick="rock"/>
+        <img class="choice" id="paper" src="public/images/paper.png" height="280px" width="220px" alt="paper" title="paper" data-pick="paper"/>
+        <img class="choice" id="scissors" src="public/images/scissors.png" alt="scissors" title="scissors" data-pick="scissors"/>
+      </div>
+      <div id="myDiv">
+        <p id='outcome'> </p>
+        <p id='playerChoice'> </p>
+        <p id='computerChoice'> </p>
+      </div>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="src/frontEnd.js" ></script>
+    <script type="text/javascript" src="src/Rps.js" ></script>
+  </body>
 </html>
