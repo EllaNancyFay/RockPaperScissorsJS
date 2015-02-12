@@ -28,15 +28,15 @@ describe('Rock Paper Scissors', function() {
     });
 
     it('rock beats scissors', function() {
-      expect(rps.versus(rock, scissors)).toEqual('rock');
+      expect(rps.versus(rock, scissors)).toEqual('rock wins');
     });
 
     it('scissors beats paper', function() {
-      expect(rps.versus(paper, scissors)).toEqual('scissors');
+      expect(rps.versus(paper, scissors)).toEqual('scissors wins');
     });
 
     it('paper beats rock', function() {
-      expect(rps.versus(paper, rock)).toEqual('paper');
+      expect(rps.versus(paper, rock)).toEqual('paper wins');
     });
   });
 
